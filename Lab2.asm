@@ -33,7 +33,7 @@ main:
         add $a0, $zero, $t0             # Descriptor de archivo
         syscall
 
-        # Configurar punteros para el parsing de números
+        # Configurar punteros para el analisis de números
         la $t2, buffer                  # Puntero al inicio del buffer
         add $t3, $t2, $t1               # Puntero al final del buffer
         addi $sp, $sp, -4               # Reservar espacio en la pila
@@ -176,7 +176,7 @@ escribir_coma:
     # Escribir el separador (coma y espacio)
     li $v0, 15               # syscall para escribir
     add $a0, $zero, $s6            # descriptor del archivo
-    la $a1, space            # ", "
+    la $a1, space            # ","
     li $a2, 2                # longitud del separador
     syscall
     
